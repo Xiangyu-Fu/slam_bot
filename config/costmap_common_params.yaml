@@ -1,0 +1,12 @@
+map_type: costmap
+
+obstacle_range: 5
+raytrace_range: 20.0
+
+transform_tolerance: 1.0
+
+inflation_radius: 1.5
+
+observation_sources: laser_scan_sensor
+
+laser_scan_sensor: {sensor_frame: /hokuyo, data_type: LaserScan, topic: /slam_bot/laser/scan, marking: true, clearing: true}

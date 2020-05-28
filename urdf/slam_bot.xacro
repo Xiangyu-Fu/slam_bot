@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="slam_bot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:include filename="$(find slam_bot)/urdf/slam_bot.gazebo.xacro" />
+
+  <link name="base_footprint">
+   <visual>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <geometry>
+        <box size="0.001 0.001 0.001" />
+      </geometry>
+    </visual>
+  </link>
+
+  <joint name="base_link_joint" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <parent link="base_footprint"/>
+    <child link="base_link" />
+  </joint>
+
+
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.04"
+        rpy="0 0 0" />
+      <mass
+        value="0.59313" />
+      <inertia
+        ixx="0.0013364"
+        ixy="4.824E-20"
+        ixz="1.7974E-21"
+        iyy="0.0038545"
+        iyz="3.8567E-21"
+        izz="0.0051839" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_wheel_FL">
+    <inertial>
+      <origin
+        xyz="0 0.012 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.10053" />
+      <inertia
+        ixx="4.3563E-05"
+        ixy="1.1294E-21"
+        ixz="-1.6941E-21"
+        iyy="8.0425E-05"
+        iyz="-7.0586E-23"
+        izz="4.3563E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_FL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_FL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel_FL"
+    type="continuous">
+    <origin
+      xyz="0.08 0.08 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_wheel_FL" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_wheel_FR">
+    <inertial>
+      <origin
+        xyz="0 -0.012 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.10053" />
+      <inertia
+        ixx="4.3563E-05"
+        ixy="-7.2158E-38"
+        ixz="-5.294E-23"
+        iyy="8.0425E-05"
+        iyz="7.9908E-38"
+        izz="4.3563E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_FR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_FR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel_FR"
+    type="continuous">
+    <origin
+      xyz="0.0800000000000013 -0.0799999999999997 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_wheel_FR" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_wheel_BL">
+    <inertial>
+      <origin
+        xyz="0 0.012 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.10053" />
+      <inertia
+        ixx="4.3563E-05"
+        ixy="5.6469E-22"
+        ixz="5.6469E-22"
+        iyy="8.0425E-05"
+        iyz="-4.2977E-37"
+        izz="4.3563E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_BL.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_BL.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel_BL"
+    type="continuous">
+    <origin
+      xyz="-0.08 0.08 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_wheel_BL" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link_wheel_BR">
+    <inertial>
+      <origin
+        xyz="0 -0.012 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.10053" />
+      <inertia
+        ixx="4.3563E-05"
+        ixy="-7.3468E-38"
+        ixz="-6.1763E-23"
+        iyy="8.0425E-05"
+        iyz="-4.5918E-39"
+        izz="4.3563E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_BR.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/link_wheel_BR.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_wheel_BR"
+    type="continuous">
+    <origin
+      xyz="-0.08 -0.08 0.04"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="link_wheel_BR" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-0.0050423 0 0.01"
+        rpy="0 0 0" />
+      <mass
+        value="0.003959" />
+      <inertia
+        ixx="2.6388E-07"
+        ixy="1.0006E-21"
+        ixz="6.9411E-22"
+        iyy="1.6457E-07"
+        iyz="-8.1106E-24"
+        izz="1.6457E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://slam_bot/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_camera"
+    type="fixed">
+    <origin
+      xyz="0.15 0 0.03"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+
+  <link name="camera_depth_optical_frame" />
+
+  <joint name="camera_depth_optical_joint" type="fixed">
+    <origin rpy="-1.57079632679 0 -1.57079632679" xyz="0 0 0" />
+    <parent link="camera"/>
+    <child link="camera_depth_optical_frame" />
+  </joint>
+
+  <!--laser_link-->
+  <link name="hokuyo">
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slam_bot/meshes/hokuyo.dae"/>
+      </geometry>
+    </collision>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://slam_bot/meshes/hokuyo.dae"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0 0 1.0"/>
+      </material>
+    </visual>
+    <inertial>
+      <mass value="0.1" />
+      <origin xyz="0.00 0.0 0.0" rpy="0 1.57 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
+    </inertial>
+  </link>
+
+  <joint name="hokuyo_joint" type="fixed">
+    <axis xyz="0 0 0" />
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="hokuyo"/>
+  </joint>
+
+</robot>
