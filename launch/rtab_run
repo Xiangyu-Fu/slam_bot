@@ -1,0 +1,66 @@
+#! /bin/bash
+
+gnome-terminal -x bash -c "killall gzserver" &
+sleep 1 &&
+
+echo ' '
+read -p 'Would you like to clear the previous map database? (y/n): ' ansinput
+
+if [ “$ansinput” = “y” ]
+then
+ printf '\n Map deleted \n'
+ rm -f ~/.ros/rtabmap.db
+
+elif [ “$ansinput” = “n” ]
+then
+ printf '\n Map kept \n'
+
+else
+ echo 'Warning: Not an acceptable option. Choose (y/n).
+         '
+fi
+
+echo ' '
+
+read -p 'Enter target world destination or d for default: ' input_choice
+
+if [ “$input_choice” = “d” ]
+then
+gnome-terminal -x bash -c " roslaunch slam_bot slam.launch "&
+
+else
+gnome-terminal -x bash -c "roslaunch slam_bot slam.launch world_file:=$input_choice"  &
+fi
+
+sleep 3 &&
+
+gnome-terminal -x bash -c " rosrun slam_bot teleop" &
+
+sleep 3 &&
+
+
+
+echo ' '
+read -p 'mapping or localization (m/l): ' input
+
+if [ “$input” = “m” ]
+then
+gnome-terminal -x bash -c "  roslaunch slam_bot mapping.launch simulation:=true" 
+
+
+elif [ “$input” = “l” ]
+then
+gnome-terminal -x bash -c "  roslaunch slam_bot localization.launch" 
+gnome-terminal -x bash -c "  roslaunch slam_bot move.launch" 
+
+
+else
+ echo 'Warning: Not an acceptable option. Choose (m/l).'
+fi
+sleep 3 &&
+
+gnome-terminal -x bash -c "  roslaunch slam_bot rviz.launch"
+
+echo ' '
+echo 'Script Completed'
+echo ' '

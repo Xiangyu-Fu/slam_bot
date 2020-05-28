@@ -1,0 +1,7 @@
+<launch>
+  <!--launch rviz-->
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find slam_bot)/launch/config/robot_slam.rviz"/>
+
+
+</launch>
