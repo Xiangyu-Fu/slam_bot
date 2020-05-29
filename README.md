@@ -20,6 +20,7 @@ $ source devel/setup.bash
 $ ./src/slam_bot/launch/rtab_run
 ```
 
+---
 
 Here are the final project effects!
 
