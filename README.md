@@ -8,8 +8,11 @@ SLAM mapping and navigation simulation project
  
  The **slam_bot_initial** folder provides the initial slam_bot package,if you want to build package by yourself,this is good choice!
 
+## updated version for ROS Noetic
 
+Since I recently worked on a small project and deployed Lidar into a real robot, I reused this repo, changed it to the ROS noetic version, and fixed many bugs.
 
+https://github.com/Xiangyu-Fu/hsa-final-project
 
 ## Launch
 ```
