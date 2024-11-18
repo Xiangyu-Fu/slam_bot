@@ -14,6 +14,16 @@ Since I recently worked on a small project and deployed Lidar into a real robot,
 
 https://github.com/Xiangyu-Fu/hsa-final-project
 
+## Requirements
+```bash
+sudo apt-get install ros-noetic-move-base-msgs
+sudo apt-get install ros-noetic-navigation
+sudo apt-get install ros-noetic-map-server
+sudo apt-get install ros-noetic-move-base
+sudo apt-get install ros-noetic-amcl
+sudo apt-get install ros-noetic-slam-gmapping
+```
+
 ## Launch
 ```
 $ cd ~/catkin_ws/src
